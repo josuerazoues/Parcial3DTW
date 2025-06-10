@@ -36,14 +36,16 @@
                                 <p>Usuario</p>
                             </a>
                         </li>
-
                     </ul>
+
+                    <li class="nav-item">
+                        <a href="{{ route('geolocalizacion') }}" target="frameprincipal" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>APIs</p>
+                        </a>
+                    </li>
                  </li>
                 @endcan
-
-
-
-
             </ul>
         </nav>
 
