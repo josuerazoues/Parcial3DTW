@@ -1,0 +1,116 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f0e1;
+    height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+.demo-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-lg {
+    padding: 12px 26px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+::placeholder {
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.form-control-lg {
+    font-size: 16px;
+    padding: 25px 20px;
+}
+
+.font-500 {
+    font-weight: 500;
+}
+
+.image-size-small {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.image-size-small img {
+    width: 200px;
+}
+
+.floating-buttons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden; /* Evita que las imágenes se salgan de la pantalla */
+}
+
+.floating-buttons img {
+    position: absolute;
+    width: 80px;
+    opacity: 0.3;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+    transition: none; /* Quitamos transiciones para que JS tenga control total */
+}
+
+/* Ajustamos las posiciones iniciales para mejor distribución */
+.pos-1 { top: 5%; left: 5%; animation-delay: 0s; }
+.pos-2 { top: 15%; right: 10%; animation-delay: 1s; }
+.pos-3 { bottom: 10%; left: 8%; animation-delay: 2s; }
+.pos-4 { top: 20%; right: 30%; animation-delay: 3s; }
+.pos-5 { bottom: 15%; right: 10%; animation-delay: 4s; }
+.pos-6 { top: 25%; left: 80%; animation-delay: 5s; }
+.pos-7 { bottom: 25%; right: 30%; animation-delay: 6s; }
+.pos-8 { top: 65%; left: 5%; animation-delay: 7s; }
+.pos-9 { bottom: 35%; right: 5%; animation-delay: 0s; }
+.pos-10 { top: 75%; left: 15%; animation-delay: 1s; }
+.pos-11 { top: 30%; right: 45%; animation-delay: 2s; }
+.pos-12 { bottom: 20%; left: 70%; animation-delay: 3s; }
+.pos-13 { top: 25%; left: 25%; animation-delay: 4s; }
+
+/* Animación más suave y natural */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(5px, 10px) rotate(2deg);
+    }
+    50% {
+        transform: translate(10px, 5px) rotate(0deg);
+    }
+    75% {
+        transform: translate(5px, -5px) rotate(-2deg);
+    }
+}
+
+
+/* Ajustes para el formulario */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 500px;
+}
