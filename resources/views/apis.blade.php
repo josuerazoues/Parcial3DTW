@@ -17,6 +17,8 @@
                 <button class="btn btn-outline-primary" onclick="mostrarSeccion('seccionGeo')">API de
                     Geolocalización</button>
                 <button class="btn btn-outline-success" onclick="mostrarSeccion('seccionCanvas')">API de Dibujo</button>
+                <button class="btn btn-outline-danger" onclick="mostrarSeccion('seccionVideo')">API de Video</button>
+
             </div>
         </div>
 
@@ -76,6 +78,37 @@
             </div>
         </div>
     </div>
+
+    <!-- Sección de API de Video -->
+<div id="seccionVideo" style="display: none;">
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <div class="w-100 text-center">
+                            <h3 class="m-0">API de Video</h3>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <p>Esta funcionalidad accede a tu cámara y te permite tomar una foto. Click en el boton para tomar la foto.</p>
+                        
+                        <video id="video" width="640" height="480" autoplay style="border: 1px solid #000;"></video>
+                        <br /><br />
+                        <button id="capturarFoto" class="btn btn-danger">Tomar Foto</button>
+                        <button id="reintentarFoto" class="btn btn-secondary">Reintentar Foto</button>
+                        <br /><br />
+                        <canvas id="fotoCanvas" width="640" height="480" style="border: 1px solid #000;"></canvas>
+                        <br /><br />
+                        <p>Asi se ve la foto que acabas de tomar, pueden tomar la foto nuevamente o guardarla.</p>
+                        <a id="descargarFoto" class="btn btn-dark" style="display: none;" download="captura.jpg">Descargar Foto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
    </section>
 @endsection
 
@@ -84,4 +117,5 @@
     <script src="{{ asset('js/mostrarSeccionesApis.min.js') }}"></script>
     <script src="{{ asset('js/ErrorGeolizacion.min.js') }}"></script>
     <script src="{{ asset('js/CanvasDibujo.min.js') }}"></script>
+    <script src="{{ asset('js/VideoCamara.min.js') }}"></script>
 @endsection
