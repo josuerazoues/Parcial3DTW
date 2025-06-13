@@ -21,6 +21,7 @@
                             <p>Esta funcionalidad obtiene tu ubicación actual usando la API de Geolocalización del navegador.</p>
 
                             <button id="obtenerUbicacion" class="btn btn-primary">Obtener mi ubicación</button>
+                            <button id="confirmarLlegada" style="display: none;">Confirmar llegada de vehículo</button>
 
                             <div id="resultado" class="mt-3">
                                 <p><strong>Latitud:</strong> <span id="latitud">No disponible</span></p>
@@ -58,79 +59,15 @@
         </div>
     </div>
 
-    <!-- Scripts para ambas APIs -->
-    <script src="{{ asset('js/ErrorGeolizacion.min.js') }}" type="text/javascript"></script>
-
+    <!-- Enlaces para usar el mapa -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+ 
+    <!-- Scripts para las APIs -->
+    <script src="{{ asset("js/mostrarSeccionesApis.min.js") }}" type="text/javascript"></script>
+    <script src="{{ asset('js/ErrorGeolizacion.min.js') }}" type="text/javascript"></script>
+    <script src="{{ asset("js/CanvasDibujo.min.js") }}" type="text/javascript"></script>
 
-    <script>
-        // Función para mostrar secciones
-        function mostrarSeccion(id) {
-            document.getElementById('seccionGeo').style.display = 'none';
-            document.getElementById('seccionCanvas').style.display = 'none';
-            document.getElementById(id).style.display = 'block';
-        }
+   
 
-        // Geolocalización
-        var mapa = L.map('mapa').setView([0, 0], 2);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap contributors'
-        }).addTo(mapa);
-
-        var marcador;
-        document.getElementById('obtenerUbicacion').addEventListener('click', function () {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-
-                    document.getElementById('latitud').textContent = lat;
-                    document.getElementById('longitud').textContent = lon;
-
-                    if (marcador) {
-                        mapa.removeLayer(marcador);
-                    }
-
-                    marcador = L.marker([lat, lon]).addTo(mapa)
-                        .bindPopup('Tu ubicación actual.').openPopup();
-
-                    mapa.setView([lat, lon], 13);
-                }, function (error) {
-                    console.error(error);
-                    alert("Error al obtener la ubicación.");
-                });
-            } else {
-                alert("La geolocalización no es compatible con este navegador.");
-            }
-        });
-
-        // Canvas de dibujo
-        const canvas = document.getElementById("canvasDibujo");
-        const ctx = canvas.getContext("2d");
-        let dibujando = false;
-
-        canvas.addEventListener("mousedown", () => dibujando = true);
-        canvas.addEventListener("mouseup", () => dibujando = false);
-        canvas.addEventListener("mouseout", () => dibujando = false);
-        canvas.addEventListener("mousemove", function (event) {
-            if (!dibujando) return;
-
-            const rect = canvas.getBoundingClientRect();
-            const x = event.clientX - rect.left;
-            const y = event.clientY - rect.top;
-
-            ctx.fillStyle = "black";
-            ctx.beginPath();
-            ctx.arc(x, y, 2, 0, Math.PI * 2);
-            ctx.fill();
-        });
-
-        document.getElementById("guardarDibujo").addEventListener("click", function () {
-            const enlace = document.createElement("a");
-            enlace.download = "mi_dibujo.jpg";
-            enlace.href = canvas.toDataURL("image/jpeg");
-            enlace.click();
-        });
-    </script>
 </section>
