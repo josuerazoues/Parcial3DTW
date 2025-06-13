@@ -58,26 +58,54 @@
 
     <!-- Sección de Canvas de dibujo -->
     <div id="seccionCanvas" style="display: none;">
-        <div class="container-fluid mt-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">API de Dibujo en Canvas</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>Usa el mouse para dibujar sobre el lienzo. Puedes guardar tu dibujo como imagen JPG.</p>
+            <div class="container-fluid mt-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header bg-success text-white">
+                                <div class="w-100 text-center">
+                                    <h3 class="m-0">API de Dibujo en Canvas</h3>
+                                </div>
+                            </div>
+                            
+                            <div class="card-body text-center" style="font-family: Calibri; font-size: 18px;">
+   <p class="text-start">
+    Elige una herramienta y color para dibujar.<br>
+    - Arrastra el mouse para definir el tamaño.<br>
+    - Haz clic sobre una figura para moverla.<br>
+    - Usa su esquina inferior derecha para cambiar su tamaño.<br>
+    - Puedes borrar, deshacer o guardar el dibujo en JPG.
+</p>
 
-                            <canvas id="canvasDibujo" width="800" height="400" style="border:1px solid #000;"></canvas>
+   
+    <div class="container mb-3">
+        <div class="row align-items-center">
+            <div class="col-md-3 text-start d-flex align-items-center gap-2 mb-2 mb-md-0">
+                <label for="colorPicker" class="me-2">Color:</label>
+                <input type="color" id="colorPicker" class="form-control form-control-color" value="#000000" style="width: 50px; height: 35px;">
+            </div>
 
-                            <br /><br />
-                            <button id="guardarDibujo" class="btn btn-success">Guardar dibujo en JPG</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center gap-2 mb-2 mb-md-0">
+                <label for="herramienta" class="me-2">Herramienta:</label>
+                <select id="herramienta" class="form-select" style="width: 160px;">
+                    <option value="pincel">Pincel</option>
+                    <option value="rect">Rectángulo</option>
+                    <option value="circle">Círculo</option>
+                    <option value="triangle">Triángulo</option>
+                </select>
+            </div>
+
+            <div class="col-md-5 d-flex justify-content-end gap-3">
+                <button id="borrarLienzo" class="btn btn-danger" style="min-width: 150px;">Borrar lienzo</button>
+                <button id="deshacer" class="btn btn-secondary" style="min-width: 150px;">Deshacer</button>
             </div>
         </div>
     </div>
+
+    <canvas id="canvasDibujo" width="800" height="400" style="border:1px solid #000;"></canvas>
+    <br><br>
+    <button id="guardarDibujo" class="btn btn-success mt-3">Guardar dibujo en JPG</button>
+</div>
 
     <!-- Sección de API de Video -->
 <div id="seccionVideo" style="display: none;">
