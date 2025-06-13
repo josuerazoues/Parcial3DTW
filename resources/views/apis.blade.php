@@ -83,9 +83,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <canvas id="canvasDibujo" width="800" height="400" style="border:1px solid #000;"></canvas>
+                                <canvas id="canvasDibujo" width="800" height="400" style="border:1px solid #000;"></canvas>
                             <br><br>
-                            <button id="guardarDibujo" class="btn btn-success mt-3">Guardar dibujo en JPG</button>
+                                <button id="guardarDibujo" class="btn btn-success mt-3">Guardar dibujo en JPG</button>
                         </div>
                     </div>
                 </div>
@@ -94,31 +94,47 @@
     </div>
 
     <!-- Sección de API de Video -->
-    <div id="seccionVideo" style="display: none;">
-        <div class="container-fluid mt-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-header bg-danger text-white text-center">
-                            <h3 class="m-0">API de Video</h3>
+        <div id="seccionVideo" style="display: none;">
+            <div class="container-fluid mt-4">
+                <div class="row">
+                     <div class="col-md-12">
+                        <div class="card">
+                             <div class="card-header bg-danger text-white text-center">
+                             <h3 class="m-0">API de Video</h3>
+                              </div>
+                             <div class="card-body text-center">
+                              <p>Esta funcionalidad accede a tu cámara, permite tomar fotos y grabar videos.</p>
+
+                         <!-- Cámara en vivo -->
+                        <video id="video" width="640" height="480" autoplay muted style="border: 1px solid #000;"></video>
+                        <br><br>
+
+                        <!-- Botones de acción -->
+                        <div style="display: flex; justify-content: center; flex-wrap: wrap;">
+                            <button id="capturarFoto" class="btn btn-danger" style="margin-right: 10px;">Tomar Foto</button>
+                            <button id="reintentarFoto" class="btn btn-secondary" style="margin-right: 10px;">Reintentar Foto</button>
+                            <button id="iniciarGrabacion" class="btn btn-success" style="margin-right: 10px;">Grabar Video</button>
+                             <button id="detenerGrabacion" class="btn btn-warning" disabled>Detener Grabación</button>
                         </div>
-                        <div class="card-body text-center">
-                            <p>Esta funcionalidad accede a tu cámara y te permite tomar una foto. Haz clic en el botón para capturar.</p>
-                            <video id="video" width="640" height="480" autoplay style="border: 1px solid #000;"></video>
-                            <br><br>
-                            <button id="capturarFoto" class="btn btn-danger">Tomar Foto</button>
-                            <button id="reintentarFoto" class="btn btn-secondary">Reintentar Foto</button>
-                            <br><br>
-                            <canvas id="fotoCanvas" width="640" height="480" style="border: 1px solid #000;"></canvas>
-                            <br><br>
-                            <p>Así se ve la foto que acabas de tomar. Puedes volver a intentarlo o descargarla.</p>
-                            <a id="descargarFoto" class="btn btn-dark" style="display: none;" download="captura.jpg">Descargar Foto</a>
+
+                        <canvas id="fotoCanvas" width="640" height="480" class="mt-4" style="border: 1px solid #000;"></canvas>
+                        <br>
+                        <a id="descargarFoto" class="btn btn-dark mt-2" style="display: none;" download="captura.jpg">Descargar Foto</a>
+                        <hr>
+                        <div class="d-flex justify-content-center">
+                            <video id="videoGrabado" controls style="display:none; border:1px solid #000;" width="640" height="480" class="mt-4"></video>
                         </div>
+                        <div class="d-flex justify-content-center">
+                             <a id="descargarVideo" class="btn btn-primary mt-2" style="display: none;">Descargar Video</a>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
 
 </section>
 @endsection
