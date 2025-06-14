@@ -18,6 +18,11 @@ Route::get('/geolocalizacion', [ApisController::class, 'index'])->name('geolocal
 
 // --- LOGIN ---
 
+//Worker
+use App\Http\Controllers\WorkerController;
+
+Route::get('/workers', [WorkerController::class, 'index'])->name('workers');
+
 Route::get('/', [LoginController::class,'index'])->name('login');
 
 Route::post('/admin/login', [LoginController::class, 'login']);

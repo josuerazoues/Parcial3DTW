@@ -44,6 +44,13 @@
                             <p>APIs</p>
                         </a>
                     </li>
+
+                 <li class="nav-item">
+                        <a href="{{ route('workers') }}" target="frameprincipal" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Web Workers</p>
+                        </a>
+                    </li>
                  </li>
                 @endcan
             </ul>
