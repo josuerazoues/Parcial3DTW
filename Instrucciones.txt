@@ -1,0 +1,13 @@
+Para correr el programa usar:
+
+    1- composer install o composer update
+    2- php artisan serve
+
+Integrantes del Equipo:
+
+Cano Arévalo, Angel Enrique - CA98033
+Erazo Garcia, Josue Natanael - EG22009
+Garcia Vasquez, Christopher Giovanni - GV21033
+Santos Gámez, Katherine Alexandra - SG21038
+Garcia Valiente, Josue Adan - GV22023
+Villalta Oviedo, Hector Alexander - VO09005

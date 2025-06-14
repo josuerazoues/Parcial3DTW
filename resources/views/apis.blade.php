@@ -14,9 +14,9 @@
     <!-- Menú de navegación -->
     <div class="container mb-4 mt-5 d-flex justify-content-center">
         <div class="btn-group" role="group">
-            <button class="btn btn-outline-primary" onclick="mostrarSeccion('seccionGeo')">API de Geolocalización</button>
-            <button class="btn btn-outline-success" onclick="mostrarSeccion('seccionCanvas')">API de Dibujo</button>
-            <button class="btn btn-outline-danger" onclick="mostrarSeccion('seccionVideo')">API de Video</button>
+            <button class="btn btn-outline-primary" onclick="mostrarSeccion('seccionGeo')">Actividad 1</button>
+            <button class="btn btn-outline-success" onclick="mostrarSeccion('seccionCanvas')">Actividad 2</button>
+            <button class="btn btn-outline-danger" onclick="mostrarSeccion('seccionVideo')">Actividad 3</button>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header bg-primary text-white text-center">
-                            <h3 class="m-0">API de Geolocalización</h3>
+                            <h3 class="m-0">Geolocalización</h3>
                         </div>
                         <div class="card-body">
                             <p>Esta funcionalidad obtiene tu ubicación actual usando la API de Geolocalización del navegador.</p>
@@ -52,7 +52,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header bg-success text-white text-center">
-                            <h3 class="m-0">API de Dibujo en Canvas</h3>
+                            <h3 class="m-0">Dibujo en Canvas</h3>
                         </div>
                         <div class="card-body text-center" style="font-family: Calibri; font-size: 18px;">
                             <p class="text-start">
@@ -100,10 +100,11 @@
                      <div class="col-md-12">
                         <div class="card">
                              <div class="card-header bg-danger text-white text-center">
-                             <h3 class="m-0">API de Video</h3>
+                             <h3 class="m-0">Video</h3>
                               </div>
                              <div class="card-body text-center">
                               <p>Esta funcionalidad accede a tu cámara, permite tomar fotos y grabar videos.</p>
+                              <p>Crea un video explicando tu dibujo y súbelo a YouTube.</p>
 
                          <!-- Cámara en vivo -->
                         <video id="video" width="640" height="480" autoplay muted style="border: 1px solid #000;"></video>

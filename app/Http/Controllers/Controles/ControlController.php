@@ -29,7 +29,7 @@ class ControlController extends Controller
             $ruta = 'no.permisos.index';
         }
 
-        $titulo = "Base Proyecto";
+        $titulo = "Centro de Actividades";
 
         return view('backend.index', compact( 'ruta', 'user', 'titulo'));
     }

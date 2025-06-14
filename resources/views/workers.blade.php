@@ -69,11 +69,11 @@
 <section class="contenedor-principal">
     <div class="card shadow">
         <div class="card-header bg-primary text-white text-center">
-            <h4 class="m-0">Ordenar 100,000 Números Aleatorios (Ascendente)</h4>
+            <h4 class="m-0">Actividad Estadistica</h4>
         </div>
         <div class="card-body">
             <p style="font-size: 1.1rem; max-width: 600px; text-align: center;">
-                Primeros 50 números ordenados en lista.
+                En esta actividad se muestran los primeros 50 numeros aleatoriamente ordenados de forma ascendente, de 100.000 posibilidades.
             </p>
 
             <button id="startBtn" class="btn btn-primary">Iniciar Cálculo</button>

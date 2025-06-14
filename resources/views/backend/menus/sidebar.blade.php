@@ -37,14 +37,15 @@
                             </a>
                         </li>
                     </ul>
+                @endcan
 
-                    <li class="nav-item">
+                <li class="nav-item">
                         <a href="{{ route('geolocalizacion') }}" target="frameprincipal" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>APIs</p>
                         </a>
                     </li>
-
+                    
                  <li class="nav-item">
                         <a href="{{ route('workers') }}" target="frameprincipal" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
@@ -52,16 +53,7 @@
                         </a>
                     </li>
                  </li>
-                @endcan
             </ul>
         </nav>
-
-
     </div>
 </aside>
-
-
-
-
-
-
